@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hello World of News Search</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="methods.js"></script>
+    <script src="main.js"></script>
+    <script src="templates.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  </head>
+<body>
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark bg-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">CollectorSite</a>
+      
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">HowTo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li> 
+          </ul>
+        </div> 
+      </nav>
+  
+    <div class="container-fluid filter-sort-bar">
+        <div class="row">
+          <div class="col col-sm-1">
+              <button class="all">All</button>
+          </div>
+          <div class="col col-sm-3">
+            <div class="barText">Genre</div>
+            <div class="dropdown">
+              <button id="genre-btn" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                All
+              </button>
+              <div id="genre-drpdwn" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a id="Thriller" class="dropdown-item">Thriller</a>
+                <a id="Adventure" class="dropdown-item">Adventure</a>
+                <a id="Comedy" class="dropdown-item">Comedy</a>
+                <a id="Animation" class="dropdown-item">Animation</a>
+              </div>
+            </div>
+          </div>
+          <div class="col col-sm-3">
+            <div class="barText">Sort</div>
+            <div class="dropdown">
+                <button id="sort-btn" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Alphabetical
+                </button>
+                <div id="sort-drpdwn" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a id="Alphabetical" class="dropdown-item">Alphabetical</a>
+                  <a id="Runtime" class="dropdown-item">Runtime</a>
+                  <a id="Popularity" class="dropdown-item">Popularity</a>
+                  <a id="Newest" class="dropdown-item">Newest to oldest</a>
+                  <a id="Oldest" class="dropdown-item">Oldest to newest</a>
+                </div>
+              </div>
+          </div>
+          <!-- <div class="col col-sm-6"></div> -->
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+        </div>
+      </div>
+      
+      <div class="movies container-fluid filter-sort-bar">
+          <div class="row">
+              <div class="col col-sm-12">
+                <div class="barText">Movies</div>
+              </div>
+          </div>
+      </div>
+    
+  </div>
+  <ul class="items">
+  </ul>
+
+  <div id="myModal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
