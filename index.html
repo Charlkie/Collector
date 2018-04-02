@@ -48,10 +48,26 @@
               <button class="all">All</button>
           </div>
           <div class="col col-sm-3">
-            <div class="barText">Genre</div>
+            <div class="barText">Sort</div>
+            <div class="dropdown">
+                <button id="sort-btn" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Default
+                </button>
+                <div id="sort-drpdwn" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a id="Alphabetical" class="dropdown-item">Alphabetical</a>
+                  <a id="Reverse-Alphabetical" class="dropdown-item">Reverse Alphabetical</a>
+                  <a id="Longest" class="dropdown-item">Longest</a>
+                  <a id="Shortest" class="dropdown-item">Shortest</a>
+                  <a id="Most-popular" class="dropdown-item">Most Popular</a>
+                  <a id="Least-popular" class="dropdown-item">Least Popularity</a>
+                </div>
+              </div>
+          </div>
+          <div class="col col-sm-3">
+            <div class="barText">Filter</div>
             <div class="dropdown">
               <button id="genre-btn" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                All
+                Default
               </button>
               <div id="genre-drpdwn" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a id="Thriller" class="dropdown-item">Thriller</a>
@@ -60,21 +76,6 @@
                 <a id="Animation" class="dropdown-item">Animation</a>
               </div>
             </div>
-          </div>
-          <div class="col col-sm-3">
-            <div class="barText">Sort</div>
-            <div class="dropdown">
-                <button id="sort-btn" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Alphabetical
-                </button>
-                <div id="sort-drpdwn" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a id="Alphabetical" class="dropdown-item">Alphabetical</a>
-                  <a id="Runtime" class="dropdown-item">Runtime</a>
-                  <a id="Popularity" class="dropdown-item">Popularity</a>
-                  <a id="Newest" class="dropdown-item">Newest to oldest</a>
-                  <a id="Oldest" class="dropdown-item">Oldest to newest</a>
-                </div>
-              </div>
           </div>
           <!-- <div class="col col-sm-6"></div> -->
           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>

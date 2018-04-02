@@ -1,6 +1,21 @@
 
 $(document).ready(function() {
 
+var sortFilter = localStorage.getItem("sort")
+
+function storage() {
+    if (sortFilter != null ) {
+        if (sortFilter === "Shortest") {
+            runtimeSort(0)
+            $("#sort-btn").text("Shortest")
+        }
+        else if (sortFilter === "Longest") {
+            runtimeSort(1)
+            $("#sort-btn").text("Longest")
+        }
+    }
+}
+
 database = $.ajax({
         async: false,
         method: "GET",
@@ -19,6 +34,7 @@ function filterBy(filter) {
             }
         }
     }
+    storage()
 }
 
 function itemtoHTML() {
@@ -73,10 +89,48 @@ $(".all").click(function() {
     localStorage.setItem("filter", "all")
 })
 
+$("#Alphabetical").click(function() {
+    $("#sort-btn").text("Alphabetical")
+    localStorage.setItem("sort", "azSort")
+    console.log(localStorage.getItem("sort"))
+    azSort(0)
+    
+})
+$("#Reverse-Alphabetical").click(function() {
+    $("#sort-btn").text("Alphabetical")
+    azSort(1)
+    localStorage.setItem("sort", "reverse-azSort")
+    console.log(localStorage.getItem("sort"))
+})
+$("#Most-popular").click(function() {
+    $("#sort-btn").text("Most Popular")
+    voteSort(1)
+    localStorage.setItem("sort", "most-popular")
+    console.log(localStorage.getItem("sort"))
+})
+$("#Least-popular").click(function() {
+    $("#sort-btn").text("Least-popular")
+    voteSort(0)
+    localStorage.setItem("sort", "Least-popular")
+})
+$("#Longest").click(function() {
+    $("#sort-btn").text("Longest")
+    if (sortFilter != "Longest") runtimeSort(1)
+    localStorage.setItem("sort", "Longest")
+    sortFilter = "Longest"
+})
+$("#Shortest").click(function() {
+    $("#sort-btn").text("Shortest")
+    if (sortFilter != "Shortest") runtimeSort(0)
+    sortFilter = "Shortest"
+})
+
 let hello1 = database.responseText;
 let hello2 = JSON.parse(hello1);
 
 let filter = localStorage.getItem("filter")
+let sort = localStorage.getItem("sort")
+
 if (filter === null || filter === "all") {
     allItems()
     $("#genre-btn").text("all")
@@ -84,6 +138,26 @@ if (filter === null || filter === "all") {
     filterBy(filter)
     $("#genre-btn").text(filter)
 }
+
+if (sort != null ) {
+    if (sort === "Shortest") {
+        runtimeSort(1)
+        $("#sort-btn").text("Longest") /////////////////////////////////////
+    }
+    else if (sort === "Longest") {
+        runtimeSort(0)
+        $("#sort-btn").text("Shortest")
+    }
+    else if (sort === "azSort") {
+        azSort(0)
+        $("#sort-btn").text("Alphabetical")
+    }
+    else if (sort === "reverse-azSort") {
+        azSort(1)
+        $("#sort-btn").text("Reverse Alphabetical")
+    }
+}
+
 
 $("#genre-drpdwn a").click(function() {
     let text = $(this).text()
@@ -93,79 +167,6 @@ $("#sort-btn a").click(function() {
     let text = $(this).text()
     $("#sort-drpdwn").text(text)
 })
-
-$("#Alphabetical").click(function() {
-    let text = $(this).text()
-    $("#sort-btn").text(text)
-    allItems()
-})
-
-// $("#Runtime").click(function() {
-//     $("ul.items").empty()
-//     let text = $(this).text()
-//     $("#sort-btn").text(text)
-//     let databaseObj = database.responseText
-//     databaseObj = JSON.parse(databaseObj)
-//     obj = []
-//     for (let i = 0; i < databaseObj.length; i++) {
-//         obj.push(databaseObj[i])
-//     }
-//     console.log(obj)
-//     obj.sort(function(a ,b) 
-//         {
-//             console.log("a:", a.budget)
-//             console.log("b:", b.budget)
-//             return Number(a.budget) - Number(b.budget)
-//         }
-//     )
-//     for (let i=0; i < obj.length; i++) {
-//         $(".items").append([obj[i]].map(test_item_template).join(""));
-//     }
-// })
-
-function convertDate(stringdate)
-{
-    // Internet Explorer does not like dashes in dates when converting, 
-    // so lets use a regular expression to get the year, month, and day 
-    var DateRegex = /([^-]*)-([^-]*)-([^-]*)/;
-    var DateRegexResult = stringdate.match(DateRegex);
-    var DateResult;
-    var StringDateResult = "";
-
-    // try creating a new date in a format that both Firefox and Internet Explorer understand
-    try
-    {
-        DateResult = new Date(DateRegexResult[2]+"/"+DateRegexResult[3]+"/"+DateRegexResult[1]);
-    } 
-    // if there is an error, catch it and try to set the date result using a simple conversion
-    catch(err) 
-    { 
-        DateResult = new Date(stringdate);
-    }
-
-    // format the date properly for viewing
-    StringDateResult = (DateResult.getMonth()+1)+"/"+(DateResult.getDate()+1)+"/"+(DateResult.getFullYear());
-    console.log(StringDateResult);
-
-    return StringDateResult;
-}
-
-// working
-// $("#Runtime").click(function() {
-//     $("ul.items").empty()
-//     JsontoHTML()
-//     all_html.sort(function(a ,b) 
-//         {
-//             console.log("a:", a.budget)
-//             console.log("b:", b.budget)
-//             return Number(a.budget) - Number(b.budget)
-//         }
-//     )
-//     itemtoHTML()
-// })
-
-
-//Testing
 
 function JsontoHTMLSort(array) {
     $("ul.items").empty()
@@ -188,64 +189,44 @@ function JsontoHTMLSort(array) {
     }
 }
 
-$("#Runtime").click(function() {
+function currentItems() {
     children= []
-    for (let i=1; i <$("ul.items").children().length+1; i++) {
-        children.push($("ul.items li:nth-child("+i+")").find("h2").text())
-    }
-    $("ul.items").empty()
-    console.log(children)
-    JsontoHTMLSort(children)
+        for (let i=1; i <$("ul.items").children().length+1; i++) {
+            children.push($("ul.items li:nth-child("+i+")").find("h2").text())
+        }
+        $("ul.items").empty()
+        JsontoHTMLSort(children)
+}
+
+function runtimeSort(reverse) {
+    currentItems()
+    all_html.sort(function(a ,b) {return Number(a.runtime) - Number(b.runtime)})
+    if (reverse === 1) {all_html.reverse()}
+    itemtoHTML()
+}
+
+function voteSort(reverse) {
+    currentItems()
+    all_html.sort(function(a ,b) {return Number(a.vote_average) - Number(b.vote_average)})
+    if (reverse === 1) all_html.reverse()
+    itemtoHTML()
+}
+
+function azSort(reverse) {
+    currentItems()
     all_html.sort(function(a ,b) 
         {
-            console.log("a:", a.runtime)
-            console.log("b:", b.runtime)
-            return Number(a.runtime) - Number(b.runtime)
+            if(a.title < b.title) return -1;
+            if(a.title > b.title) return 1;
+            return 0;
         }
     )
+    if (reverse === 1) all_html.reverse()
     itemtoHTML()
-})
-
-//End of Testing
-
-
-$("#Popularity").click(function() {
-    $("ul.items").empty()
-    JsontoHTML()
-    all_html.sort(function(a ,b) 
-        {
-            console.log("a:", a.vote_average)
-            console.log("b:", b.vote_average)
-            return Number(a.vote_average) - Number(b.vote_average)
-        }
-    )
-    all_html.reverse()
-    itemtoHTML()
-})
-
-// $("#Newest").click(function() {
-//     $("ul.items").empty()
-//     JsontoHTML()
-    
-//     all_html.sort(function(a ,b) 
-//         {
-//             let one = convertDate(String(a.release_date))
-//             let two = convertDate(String(b.release_date))
-//             console.log("a:", one)
-//             console.log("b:", two)
-//             return Number(one) - Number(two)
-//         }
-//     )
-//     itemtoHTML()
-// })
+}
 
 $("ul.items li").click(function() {
     thisTitle = $(this).attr("id")
     all_html.find("li#"+thisTitle)
     })
-    
-    // $('#myModal').modal('toggle');
-
-
 })
-
