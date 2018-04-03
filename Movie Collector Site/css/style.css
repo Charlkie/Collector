@@ -1,0 +1,226 @@
+/* <---------------------------- RESET STYLING ----------------------------> */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Raleway', 'Montserrat', sans-serif;
+}
+
+/* <---------------------------- END RESET STYLING ----------------------------> */
+
+html {
+  background-color: rgb(25, 25, 25);
+}
+
+/* <----------------------------- TOPNAV -------------------------> */
+.navbar {
+  margin-bottom: 0;
+  color: black !important;
+  transition-timing-function: linear;
+  transition-duration: .2s;
+  /* -webkit-transition-delay: .5s;
+          transition-delay: .5s; */
+}
+.navbar-brand{
+  font-size: 2em !important;
+}
+.navbar a {
+  color: white !important;
+}
+.color-scheme {
+  border-radius: 3px;
+  background-color: rgb(49, 49, 49);
+  height: 20px;
+  width: 20px;
+  border: 2px solid white;
+}
+.color-scheme:hover {
+  cursor: pointer;
+}
+.dark {
+  background-color: rgb(0,0,0)
+}
+.light {
+  background-color: rgb(150, 150, 150)
+}
+.blue {
+  background-color: rgb(0, 67, 87)
+}
+/* <----------------------------- END OF TOPNAV -------------------------> */
+
+/* <---------------------------- MOVIE ANIMATION ----------------------------> */
+.items {
+  position: relative;
+  top: 50%;
+  float: left;
+  margin-top: 20px;
+  text-align: center;
+  width: 100%; 
+}
+.items li {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  list-style: none;
+  width: 200px;
+  height: 120px;
+  background-color: black;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+  overflow: hidden;
+  cursor: pointer;
+}
+.items li .bg-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center top;
+}
+.items li:hover {
+  -webkit-transition-delay: .5s;
+          transition-delay: .5s;
+  width: 400px;
+  height: 250px;
+}
+
+.content h2 {
+  font-size: 25px !important;
+}
+.items li:hover a .content {
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  -webkit-transition-delay: .75s;
+          transition-delay: .75s;
+  opacity: 1;
+}
+.items li a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+.items li a .content h2{
+  bottom: 10px !important;
+}
+.items li a .content {
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.75)));
+  background: linear-gradient(transparent, rgb(0, 81, 119));
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  -webkit-transform: translateY(100%) translateX(-50%);
+          transform: translateY(100%) translateX(-50%);
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  opacity: 0;
+  padding: 40px 10px 10px 10px;
+  width: 400px;
+}
+.items li a .content h2 {
+  font-weight: 300;
+  color: white;
+  font-size: 30px;
+}
+/* <---------------------------- END OF MOVIE ANIMATION ----------------------------> */
+  
+/* <------------------------ SORT-FILTER-CONTAINER ------------------------> */
+.col {
+  display: inline-flex !important;
+}
+
+.filter-sort-bar{
+  font-size: 25px;
+  color: white;
+  background: rgb(25, 25, 25);     
+}
+
+button {
+  color: white;
+  background: rgba(0,0,0,0) !important;
+  border: solid 1px white !important;
+  border-radius: 2px !important;
+  padding: 1px 4px !important;
+  font-size: 15px;
+}
+
+.all {
+  font-size: 15px;
+  height: 30px;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.all:hover {cursor: pointer;}
+
+.movies {
+  padding-top: 30px;
+}
+
+.dropdown-item {
+  cursor: pointer !important;
+}
+
+.fas, .fab {
+  font-size: 5em !important;
+}
+
+.SortFilter {
+  margin-top: 75px;
+}
+/* <------------------------ END OF SORT-FILTER-CONTAINER ------------------------> */
+
