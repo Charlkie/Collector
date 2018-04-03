@@ -1,3 +1,4 @@
+//Creats a class who's init/constructor is all the parameters of the database elements
 class MovieInfo {
     constructor(budget, genres, homepage, runtime, popularity, keywords, title, id, poster, poster1, poster2,){
         this.budget = budget;

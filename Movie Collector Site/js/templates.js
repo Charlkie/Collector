@@ -1,10 +1,6 @@
-const test_item_template = ({
-    budget,
-    genres,
-    homepage,
-    keywords,
+//function that takes the parameters budget and poster, which is then return a list item of the elemetn
+const movie_item_template = ({
     title,
-    id,
     poster,
 }) => `
 <li id=${title}>

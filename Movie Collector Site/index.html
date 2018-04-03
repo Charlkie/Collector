@@ -10,54 +10,61 @@
   <script src="js/main.js"></script>
   <script src="js/templates.js"></script>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"crossorigin="anonymous">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"crossorigin="anonymous"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
+  <!-- Topnav -->
+  <nav class="fixed-top navbar navbar-expand-lg navbar-default">
+    <a class="navbar-brand" href="index.html">MovieCollector</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link help" href="" style="margin-right: 20px;">
+            <i class="fas fa-file-alt" style="font-size: 1.5em;"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/Charlkie" style="margin-right: 20px;">
+            <i class="fab fa-github" style="font-size: 1.5em;"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://codepen.io/Charlkie/" style="margin-right: 20px;">
+            <i class="fab fa-codepen" style="font-size: 1.5em;"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <div class="color-scheme dark"></div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <div class="color-scheme blue"></div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <div class="color-scheme light"></div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    <nav class="fixed-top navbar navbar-expand-lg navbar-default">
-        <a class="navbar-brand" href="index.html">MovieCollector</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="https://codepen.io/Charlkie/" style="margin-right: 20px;">
-                  <i class="fas fa-file-alt" style="font-size: 1.5em;"></i>
-                </a>
-              </li>
-              <li class="nav-item contact">
-                <a class="nav-link" href="#" style="margin-right: 20px;">
-                  <i class="fas fa-comment-alt" style="font-size: 1.5em;"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://github.com/Charlkie" style="margin-right: 20px;">
-                  <i class="fab fa-github" style="font-size: 1.5em;"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://codepen.io/Charlkie/" style="margin-right: 20px;">
-                  <i class="fab fa-codepen" style="font-size: 1.5em;"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link"><div class="color-scheme dark"></div></a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link"><div class="color-scheme blue"></div></a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link"><div class="color-scheme light"></div></a>
-              </li>
-          </ul>
-        </div>
-      </nav>
-
+  <!-- Sort and filter bar -->
   <div class=" SortFilter container-fluid filter-sort-bar">
     <div class="row">
       <div class="col col-sm-1">
@@ -98,6 +105,7 @@
     </div>
   </div>
 
+  <!-- Movies Title -->
   <div class="movies container-fluid filter-sort-bar">
     <div class="row">
       <div class="col col-sm-12">
@@ -106,9 +114,11 @@
     </div>
   </div>
 
+  <!-- Movie Items -->
   <ul class="items">
   </ul>
 
+  <!-- Movie Information -->
   <div id="myModal" class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -136,7 +146,6 @@
           <h6 style="display: inline">Runtime: </h6>
           <span class="runtime"></span>
           <br>
-
         </div>
         <div class="modal-footer">
           <h6 class="tagline" style="margin: auto !important;"></h6>
@@ -145,36 +154,26 @@
     </div>
   </div>
 
-  <div id="Contact" class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-          <div class="modal-content">
-              <div class="modal-header text-center">
-                  <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <div class="modal-body mx-3">
-                  <div class="md-form mb-5">
-                      <i class="fa fa-envelope prefix grey-text"></i>
-                      <input type="email" id="defaultForm-email" class="form-control validate">
-                      <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
-                  </div>
-  
-                  <div class="md-form mb-4">
-                      <i class="fa fa-lock prefix grey-text"></i>
-                      <input type="password" id="defaultForm-pass" class="form-control validate">
-                      <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
-                  </div>
-  
-              </div>
-              <div class="modal-footer d-flex justify-content-center">
-                  <button class="btn btn-default">Login</button>
-              </div>
-          </div>
+  <!-- Help Hodal -->
+  <div id="HelpModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Help me</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Click on Movies to view the stats imported from Ajax</p>
+        </div>
+        <div class="modal-footer">
+          <h6 class="tagline" style="margin: auto !important;"></h6>
+        </div>
       </div>
+    </div>
   </div>
-  
-                
+
 </body>
+
 </html>
