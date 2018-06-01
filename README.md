@@ -1,6 +1,8 @@
 # Movie Collector Site
 
-To run the HTMl,
+A netflix ripoff done *without* a server, but JSON. 
+
+To run the HTML,
 
 1. Change to directory of index file /Movie Collector Site/
 
