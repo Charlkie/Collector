@@ -1,6 +1,6 @@
 # Movie Collector Site
 
-A netflix ripoff done *without* a server, but JSON. 
+A Netflix ripoff done *without* a server, but JSON. 
 
 To run the HTML,
 
